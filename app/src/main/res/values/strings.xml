@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Cashee</string>
+    <string name="app_name_no_caps">cashee</string>
+    <string name="home">Home</string>
+    <string name="finance">Finances</string>
+    <string name="add">Add</string>
+    <string name="reports">Reports</string>
+    <string name="profile">Profile</string>
+    <string name="title_home">Home</string>
+    <string name="title_finance">Finance</string>
+    <string name="title_reports">Reports</string>
+    <string name="title_profile">Profile</string>
+    <string name="next">Next</string>
+    <string name="skip">skip</string>
+    <string name="start">Start</string>
+    <string name="title_login">Login</string>
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.neillon.home.HomeFragment"
+        android:label="@string/title_home"
+        app:moduleName="home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/financeFragment"
+        android:name="com.neillon.finance.FinanceFragment"
+        android:label="@string/title_finance"
+        app:moduleName="finance"
+        tools:layout="@layout/fragment_finance" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.neillon.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        app:moduleName="profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.neillon.reports.ReportFragment"
+        android:label="@string/title_reports"
+        app:moduleName="reports"
+        tools:layout="@layout/fragment_report" />
+</navigation>

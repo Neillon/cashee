@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_outline_dashboard"
+        android:title="@string/home"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/financeFragment"
+        android:icon="@drawable/ic_outline_account_balance_wallet"
+        android:title="@string/finance"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:enabled="false"
+        android:title="@string/add"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/reportFragment"
+        android:icon="@drawable/ic_outline_pie_chart"
+        android:title="@string/reports"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_outline_person"
+        android:title="@string/profile"
+        app:showAsAction="ifRoom" />
+</menu>

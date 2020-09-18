@@ -1,0 +1,11 @@
+<resources>
+
+    <style name="TextViewFontStyle">
+        <item name="fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="NoActionBarStyle" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+    </style>
+
+</resources>

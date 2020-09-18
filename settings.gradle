@@ -1,0 +1,6 @@
+include ':features:profile'
+include ':features:reports'
+include ':features:finance'
+include ':features:home'
+include ':app'
+rootProject.name = "Cashee"
