@@ -51,8 +51,6 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.buttonSignInWithGoogle.setOnClickListener { signInWithGoogle() }
-
-        activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_UNSPECIFIED);
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
