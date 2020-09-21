@@ -6,7 +6,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -21,6 +20,9 @@ import com.neillon.authentication.databinding.FragmentLoginBinding
 import com.neillon.authentication.util.makeSimpleSnackBarWithMessage
 import com.neillon.cashee.ui.AuthenticationActivity
 import com.neillon.cashee.utils.Constants
+
+private val String.Companion.empty: CharSequence?
+    get() = ""
 
 class LoginFragment : Fragment() {
 
@@ -51,6 +53,11 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.buttonSignInWithGoogle.setOnClickListener { signInWithGoogle() }
+        binding.buttonRegister.setOnClickListener {
+            val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
+            findNavController().navigate(action)
+        }
+        activity?.actionBar?.title = String.empty
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

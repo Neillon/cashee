@@ -1,15 +1,16 @@
 <resources>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
 
     <string name="main_module">app</string>
-    <string name="or">Or</string>
-    <string name="dont_have_an_account">Don\'t have an account?</string>
+    <string name="or">ou</string>
+    <string name="dont_have_an_account">Não tem uma conta?</string>
     <string name="email">E-mail</string>
-    <string name="password">Password</string>
-    <string name="forgot_password">Forgot Password?</string>
-    <string name="sign_in">Sign In</string>
+    <string name="password">Senha</string>
+    <string name="forgot_password">Esqueceu a senha?</string>
+    <string name="sign_in">Entrar</string>
     <string name="log_in">Log In</string>
+    <string name="sign_in_with_google">Entrar com Google</string>
+    <string name="already_have_an_account">Já tenho uma conta</string>
+    <string name="create_account">Criar conta</string>
 </resources>

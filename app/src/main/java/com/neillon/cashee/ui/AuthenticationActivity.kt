@@ -1,11 +1,11 @@
 package com.neillon.cashee.ui
 
 import android.os.Bundle
-import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.neillon.cashee.databinding.ActivityAuthenticationBinding
 
 class AuthenticationActivity : AppCompatActivity() {
@@ -21,6 +21,7 @@ class AuthenticationActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         navController = navHostFragment.findNavController()
+        binding.authenticationToolbar.setupWithNavController(navController)
     }
 
     companion object {
