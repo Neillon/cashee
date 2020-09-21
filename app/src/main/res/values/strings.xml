@@ -13,5 +13,6 @@
     <string name="next">Next</string>
     <string name="skip">skip</string>
     <string name="start">Start</string>
-    <string name="title_login">Login</string>
+    <string name="title_authentication">Authentication</string>
+    <string name="authentication">authentication</string>
 </resources>

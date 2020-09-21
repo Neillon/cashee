@@ -1,4 +1,4 @@
-<resources>
-    <!-- TODO: Remove or change this placeholder text -->
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sign_out" tools:ignore="ExtraTranslation">Sign Out</string>
 </resources>

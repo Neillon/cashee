@@ -1,8 +1,8 @@
 package com.neillon.cashee.utils
 
 object Constants {
-    object Tutorial {
-        const val STORE_TUTORIAL_NAME = "tutorial"
-        const val NEED_TUTORIAL = "need_tutorial"
+
+    object Code {
+        const val REQUEST_CODE_SIGN_IN_WITH_GOOGLE = 1
     }
 }

@@ -1,3 +1,4 @@
+include ':features:authentication'
 include ':features:profile'
 include ':features:reports'
 include ':features:finance'

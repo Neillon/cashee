@@ -28,4 +28,5 @@
         android:label="@string/title_reports"
         app:moduleName="reports"
         tools:layout="@layout/fragment_report" />
+
 </navigation>

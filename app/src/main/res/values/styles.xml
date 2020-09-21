@@ -4,8 +4,7 @@
         <item name="fontFamily">@font/roboto</item>
     </style>
 
-    <style name="NoActionBarStyle" parent="Theme.MaterialComponents.NoActionBar">
+    <style name="NoActionBarStyle" parent="AppTheme">
         <item name="android:statusBarColor">@color/colorPrimary</item>
     </style>
-
 </resources>
