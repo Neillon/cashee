@@ -1,7 +1,7 @@
 <resources>
 
     <style name="TextViewFontStyle">
-        <item name="fontFamily">@font/play</item>
+        <item name="fontFamily">@font/roboto</item>
     </style>
 
     <style name="NoActionBarStyle" parent="AppTheme">

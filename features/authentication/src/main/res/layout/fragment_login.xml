@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -53,16 +53,17 @@
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingHorizontal="60dp">
 
             <Button
                 android:id="@+id/buttonSignInWithGoogle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@android:color/white"
+                android:backgroundTint="@color/almost_white"
                 android:drawableLeft="@drawable/ic_google_logo"
                 android:drawablePadding="12dp"
                 android:padding="16dp"
@@ -70,7 +71,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/dark_gray"
                 android:textSize="14sp"
-                app:strokeColor="@android:color/background_dark"
+                app:strokeColor="@color/light_gray"
                 app:strokeWidth=".5dp" />
 
             <Button

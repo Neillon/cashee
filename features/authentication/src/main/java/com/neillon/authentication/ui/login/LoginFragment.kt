@@ -21,9 +21,6 @@ import com.neillon.authentication.util.makeSimpleSnackBarWithMessage
 import com.neillon.cashee.ui.AuthenticationActivity
 import com.neillon.cashee.utils.Constants
 
-private val String.Companion.empty: CharSequence?
-    get() = ""
-
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
@@ -57,7 +54,6 @@ class LoginFragment : Fragment() {
             val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
             findNavController().navigate(action)
         }
-        activity?.actionBar?.title = String.empty
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
