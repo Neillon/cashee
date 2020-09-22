@@ -1,4 +1,4 @@
-package com.neillon.authentication
+package com.neillon.cashee.authentication
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Test

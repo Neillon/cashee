@@ -1,4 +1,4 @@
-package com.neillon.authentication
+package com.neillon.cashee.authentication
 
 import org.junit.Test
 

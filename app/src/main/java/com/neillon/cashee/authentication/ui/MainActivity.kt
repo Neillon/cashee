@@ -1,6 +1,5 @@
-package com.neillon.cashee.ui
+package com.neillon.cashee.authentication.ui
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController

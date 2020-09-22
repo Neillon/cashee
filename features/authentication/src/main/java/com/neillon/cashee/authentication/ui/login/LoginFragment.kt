@@ -1,4 +1,4 @@
-package com.neillon.authentication.ui.login
+package com.neillon.cashee.authentication.ui.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -17,8 +17,8 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.neillon.authentication.databinding.FragmentLoginBinding
-import com.neillon.authentication.util.makeSimpleSnackBarWithMessage
-import com.neillon.cashee.ui.AuthenticationActivity
+import com.neillon.cashee.authentication.ui.AuthenticationActivity
+import com.neillon.cashee.authentication.util.makeSimpleSnackBarWithMessage
 import com.neillon.cashee.utils.Constants
 
 class LoginFragment : Fragment() {
@@ -97,7 +97,8 @@ class LoginFragment : Fragment() {
                     Log.d(TAG, "firebaseAuthWithGoogle: Successfully logged")
                     val user = firebaseAuth.currentUser
 
-                    val action = LoginFragmentDirections.actionLoginFragmentToMainActivity()
+                    val action =
+                        LoginFragmentDirections.actionLoginFragmentToLoginProcessingFragment()
                     findNavController().navigate(action)
                     requireActivity().finish()
 

@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.SplashActivity"
+            android:name="com.neillon.cashee.authentication.ui.SplashActivity"
             android:theme="@style/NoActionBarStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,9 +21,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.MainActivity" />
+        <activity android:name="com.neillon.cashee.authentication.ui.MainActivity" />
         <activity
-            android:name=".ui.AuthenticationActivity"
+            android:name="com.neillon.cashee.authentication.ui.AuthenticationActivity"
             android:windowSoftInputMode="adjustResize"></activity>
 
         <meta-data

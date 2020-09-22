@@ -10,7 +10,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
-import com.neillon.cashee.ui.SplashActivity
+import com.neillon.cashee.authentication.ui.SplashActivity
 import com.neillon.profile.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {

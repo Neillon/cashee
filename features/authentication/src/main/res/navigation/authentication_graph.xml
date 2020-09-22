@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.neillon.authentication.ui.login.LoginFragment"
+        android:name="com.neillon.cashee.authentication.ui.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.neillon.authentication.ui.register.RegisterFragment"
+        android:name="com.neillon.cashee.authentication.ui.register.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -31,11 +31,11 @@
     </fragment>
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.neillon.cashee.ui.MainActivity"
+        android:name="com.neillon.cashee.authentication.ui.MainActivity"
         android:label="MainActivity" />
     <fragment
         android:id="@+id/loginWithEmailFragment"
-        android:name="com.neillon.authentication.ui.login.with_email.LoginWithEmailFragment"
+        android:name="com.neillon.cashee.authentication.ui.login.with_email.LoginWithEmailFragment"
         android:label="LoginWithEmailFragment" >
         <action
             android:id="@+id/action_loginWithEmailFragment_to_loginProcessingFragment"
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFirebaseProcessFragment"
-        android:name="com.neillon.authentication.ui.login.processing.LoginFirebaseProcessFragment"
+        android:name="com.neillon.cashee.authentication.ui.login.processing.LoginFirebaseProcessFragment"
         android:label="LoginFIrebaseProcessFragment">
         <action
             android:id="@+id/action_loginProcessingFragment_to_mainActivity"

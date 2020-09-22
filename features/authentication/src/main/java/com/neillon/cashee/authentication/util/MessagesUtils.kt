@@ -1,4 +1,4 @@
-package com.neillon.authentication.util
+package com.neillon.cashee.authentication.util
 
 import android.view.View
 import com.google.android.material.snackbar.Snackbar

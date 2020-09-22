@@ -1,4 +1,4 @@
-package com.neillon.authentication.ui.login.processing
+package com.neillon.cashee.authentication.ui.login.processing
 
 import android.os.Bundle
 import android.view.LayoutInflater

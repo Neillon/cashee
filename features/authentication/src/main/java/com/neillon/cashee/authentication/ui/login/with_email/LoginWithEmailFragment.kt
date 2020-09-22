@@ -1,11 +1,10 @@
-package com.neillon.authentication.ui.login.with_email
+package com.neillon.cashee.authentication.ui.login.with_email
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.neillon.authentication.R
 import com.neillon.authentication.databinding.FragmentLoginWithEmailBinding
 
 class LoginWithEmailFragment : Fragment() {
