@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/authentication_graph"
-    app:startDestination="@id/navigation_authentication_graph">
+    app:startDestination="@id/authentication_graph">
 
     <include-dynamic
-        android:id="@+id/navigation_authentication_graph"
+        android:id="@+id/authentication_graph"
         android:label="@string/title_authentication"
-        app:graphPackage="com.neillon.cashee"
+        app:graphPackage="com.neillon.cashee.authentication"
         app:graphResName="authentication_graph"
         app:moduleName="@string/authentication"
         tools:layout="@layout/fragment_login" />

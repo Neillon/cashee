@@ -13,7 +13,9 @@ class AuthenticationActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAuthenticationBinding
     private lateinit var navController: NavController
-    private val navHostFragment by lazy { supportFragmentManager.findFragmentById(R.id.authenticationNavHostFragment)!! as NavHostFragment }
+    private val navHostFragment by lazy {
+        supportFragmentManager.findFragmentById(R.id.authenticationNavHostFragment)!! as NavHostFragment
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
