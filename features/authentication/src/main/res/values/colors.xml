@@ -2,6 +2,6 @@
 <resources>
     <color name="colorPrimaryWithLessAlpha">#E14558</color>
     <color name="dark_gray">#2B2B2B</color>
-    <color name="light_gray">#AAAAAA</color>
-    <color name="almost_white">#EDEDED</color>
+    <color name="light_gray">#CCCCCC</color>
+    <color name="almost_white">#EFEFEF</color>
 </resources>

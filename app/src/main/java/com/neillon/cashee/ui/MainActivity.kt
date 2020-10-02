@@ -1,4 +1,4 @@
-package com.neillon.cashee.authentication.ui
+package com.neillon.cashee.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

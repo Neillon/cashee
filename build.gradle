@@ -11,6 +11,7 @@ buildscript {
         play_services_auth_version = "18.1.0"
         firebase_auth_version = "16.0.5"
         google_services_version = "4.3.3"
+        koin_version= "2.1.6"
     }
     repositories {
         google()

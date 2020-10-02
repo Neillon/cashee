@@ -1,4 +1,4 @@
-package com.neillon.cashee.authentication.ui
+package com.neillon.cashee.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -20,9 +20,14 @@ class AuthenticationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAuthenticationBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
 
+        setupNavigation()
+    }
+
+    override fun onNavigateUp(): Boolean = navController.navigateUp() || super.onNavigateUp()
+
+    private fun setupNavigation() {
         navController = navHostFragment.findNavController()
         binding.authenticationToolbar.setupWithNavController(navController)
     }

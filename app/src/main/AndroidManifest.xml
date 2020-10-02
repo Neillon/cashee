@@ -7,12 +7,13 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
+        android:name=".CasheeApplication"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.neillon.cashee.authentication.ui.SplashActivity"
+            android:name="com.neillon.cashee.ui.SplashActivity"
             android:theme="@style/NoActionBarStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,9 +22,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.neillon.cashee.authentication.ui.MainActivity" />
+        <activity android:name="com.neillon.cashee.ui.MainActivity" />
         <activity
-            android:name="com.neillon.cashee.authentication.ui.AuthenticationActivity"
+            android:name="com.neillon.cashee.ui.AuthenticationActivity"
             android:windowSoftInputMode="adjustResize"></activity>
 
         <meta-data
