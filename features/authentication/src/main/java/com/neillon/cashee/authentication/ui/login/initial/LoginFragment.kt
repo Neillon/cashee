@@ -73,6 +73,7 @@ class LoginFragment : Fragment() {
     private fun setupViews() {
         binding.buttonSignInWithGoogle.setOnClickListener { signInWithGoogle() }
         binding.buttonRegister.setOnClickListener { navigateToRegister() }
+        binding.buttonSignInWithEmail.setOnClickListener { navigateToLoginEmail() }
     }
 
     private fun observeViewModel() {
@@ -110,6 +111,11 @@ class LoginFragment : Fragment() {
      */
     private fun navigateToRegister() {
         val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
+        navController.navigate(action)
+    }
+
+    private fun navigateToLoginEmail() {
+        val action = LoginFragmentDirections.actionLoginFragmentToLoginWithEmailFragment()
         navController.navigate(action)
     }
 

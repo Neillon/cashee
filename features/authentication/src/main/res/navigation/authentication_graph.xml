@@ -34,10 +34,22 @@
         android:label="MainActivity" />
     <fragment
         android:id="@+id/loginWithEmailFragment"
-        android:name="com.neillon.cashee.authentication.ui.login.with_email.LoginWithEmailFragment"
+        android:name="com.neillon.cashee.authentication.ui.login.with_email.LoginEmailFragment"
         android:label="Login">
         <action
-            android:id="@+id/action_loginWithEmailFragment_to_mainActivity"
+            android:id="@+id/action_loginWithEmailFragment_to_loginPasswordFragment"
+            app:destination="@id/loginPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginPasswordFragment"
+        android:name="com.neillon.cashee.authentication.ui.login.with_email.LoginPasswordFragment"
+        android:label="fragment_login_password"
+        tools:layout="@layout/fragment_login_password">
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_loginPasswordFragment_to_mainActivity"
             app:destination="@id/mainActivity" />
     </fragment>
 

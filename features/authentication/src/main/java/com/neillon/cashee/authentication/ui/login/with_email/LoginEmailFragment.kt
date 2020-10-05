@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.neillon.authentication.databinding.FragmentLoginWithEmailBinding
+import com.neillon.authentication.databinding.FragmentLoginEmailBinding
 
-class LoginWithEmailFragment : Fragment() {
+class LoginEmailFragment : Fragment() {
 
-    private lateinit var binding: FragmentLoginWithEmailBinding
+    private lateinit var binding: FragmentLoginEmailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +19,7 @@ class LoginWithEmailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentLoginWithEmailBinding.inflate(layoutInflater)
+        binding = FragmentLoginEmailBinding.inflate(layoutInflater)
         return binding.root
     }
 
