@@ -3,5 +3,6 @@
     <color name="colorPrimaryWithLessAlpha">#E14558</color>
     <color name="dark_gray">#2B2B2B</color>
     <color name="light_gray">#CCCCCC</color>
+    <color name="light_gray_text">#919191</color>
     <color name="almost_white">#EFEFEF</color>
 </resources>

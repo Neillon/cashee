@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <com.neillon.cashee.authentication.ui.custom.NextButton
         android:layout_width="0dp"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:title="Continuar" />
+        app:title="Continuar"
+        app:enable="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

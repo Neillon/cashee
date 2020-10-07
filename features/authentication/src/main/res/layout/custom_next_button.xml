@@ -3,22 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="70dp"
+    android:layout_height="60dp"
     android:padding="20dp"
     tools:background="@drawable/background_next_button">
 
     <TextView
         android:id="@+id/buttonTitleNextButton"
-        style="@style/TextAppearance.MaterialComponents.Headline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="?attr/colorOnPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewNextButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewNextButton"
         tools:text="Continuar" />
 
     <ImageView
+        android:id="@+id/imageViewNextButton"
         android:layout_width="28dp"
         android:layout_height="28dp"
         android:src="@drawable/ic_keyboard_arrow_right"
