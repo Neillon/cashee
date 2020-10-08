@@ -115,7 +115,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun navigateToLoginEmail() {
-        val action = LoginFragmentDirections.actionLoginFragmentToLoginWithEmailFragment()
+        val action = LoginFragmentDirections.actionLoginFragmentToLoginWithEmailFragment("")
         navController.navigate(action)
     }
 

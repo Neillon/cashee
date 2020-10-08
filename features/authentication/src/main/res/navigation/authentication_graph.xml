@@ -35,10 +35,13 @@
     <fragment
         android:id="@+id/loginWithEmailFragment"
         android:name="com.neillon.cashee.authentication.ui.login.with_email.LoginEmailFragment"
-        android:label="Login">
+        android:label="{title}">
         <action
             android:id="@+id/action_loginWithEmailFragment_to_loginPasswordFragment"
             app:destination="@id/loginPasswordFragment" />
+        <argument
+            android:name="title"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/loginPasswordFragment"

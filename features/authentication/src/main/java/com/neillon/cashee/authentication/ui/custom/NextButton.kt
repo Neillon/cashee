@@ -10,8 +10,7 @@ import com.neillon.authentication.R
 
 class NextButton(context: Context, var attrs: AttributeSet) : ConstraintLayout(context, attrs) {
 
-    private lateinit var title: String
-    private var enableButton: Boolean
+    private var title: String
 
     private val textViewTitle: TextView by lazy { findViewById<TextView>(R.id.buttonTitleNextButton) }
 
@@ -22,7 +21,6 @@ class NextButton(context: Context, var attrs: AttributeSet) : ConstraintLayout(c
         context.theme.obtainStyledAttributes(attrs, R.styleable.NextButton, 0, 0)
             .apply {
                 try {
-                    enableButton = getBoolean(R.styleable.NextButton_enable, false)
                     title = getString(R.styleable.NextButton_title).toString()
                 } finally {
                     recycle()
@@ -30,11 +28,20 @@ class NextButton(context: Context, var attrs: AttributeSet) : ConstraintLayout(c
             }
 
         textViewTitle.text = title
-        background = if (enableButton) {
+        background = if (isEnabled) {
             getDrawable(context, R.drawable.background_next_button)
         } else {
             getDrawable(context, R.drawable.background_next_button_disabled)
         }
+    }
 
+    fun disable() {
+        background = getDrawable(context, R.drawable.background_next_button_disabled)
+        isEnabled = false
+    }
+
+    fun enable() {
+        background = getDrawable(context, R.drawable.background_next_button)
+        isEnabled = true
     }
 }
