@@ -6,6 +6,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.transition.MaterialElevationScale
 import com.neillon.cashee.R
 import com.neillon.cashee.databinding.ActivityAuthenticationBinding
 
@@ -30,6 +31,10 @@ class AuthenticationActivity : AppCompatActivity() {
     private fun setupNavigation() {
         navController = navHostFragment.findNavController()
         binding.authenticationToolbar.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            binding.authenticationToolbar.title = ""
+        }
     }
 
     companion object {

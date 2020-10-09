@@ -3,6 +3,8 @@ package com.neillon.cashee.authentication.di
 import com.neillon.cashee.authentication.repository.AuthRepository
 import com.neillon.cashee.authentication.repository.AuthenticationRepository
 import com.neillon.cashee.authentication.ui.login.initial.LoginViewModel
+import com.neillon.cashee.authentication.ui.login.with_email.LoginPasswordViewModel
+import com.neillon.cashee.authentication.usecase.LoginWithEmailAndPasswordUseCase
 import com.neillon.cashee.authentication.usecase.LoginWithGoogleUseCase
 import com.neillon.cashee.authentication.usecase.UseCase
 import com.neillon.cashee.authentication.util.FirebaseConfiguration
@@ -21,7 +23,10 @@ object AuthenticationModule {
 
         // Use Case
         factory { LoginWithGoogleUseCase(repository = get()) } bind UseCase::class
+        factory { LoginWithEmailAndPasswordUseCase(repository = get()) } bind UseCase::class
 
+        // ViewModel
         viewModel { LoginViewModel(authenticationUseCase = get()) }
+        viewModel { LoginPasswordViewModel(loginWithEmailAndPasswordUseCase = get()) }
     }
 }

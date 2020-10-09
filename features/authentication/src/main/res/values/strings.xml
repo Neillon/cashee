@@ -18,4 +18,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="what_is_your_email">Qual o seu email?</string>
     <string name="invalid_email">E-mail inválido</string>
+    <string name="inform_your_password">Informe sua senha</string>
 </resources>

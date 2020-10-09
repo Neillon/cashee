@@ -11,6 +11,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.transition.MaterialElevationScale
 import com.neillon.authentication.R
 import com.neillon.authentication.databinding.FragmentLoginEmailBinding
 import kotlinx.coroutines.launch
@@ -35,8 +36,13 @@ class LoginEmailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navController = findNavController()
+
+        setupNavigation()
         setupView()
+    }
+
+    private fun setupNavigation() {
+        navController = findNavController()
     }
 
     private fun setupView() {
