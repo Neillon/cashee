@@ -1,4 +1,4 @@
-package com.neillon.cashee.authentication.ui.login.with_email
+package com.neillon.cashee.authentication.ui.register.email
 
 import android.os.Bundle
 import android.text.Editable
@@ -11,26 +11,22 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.transition.MaterialElevationScale
 import com.neillon.authentication.R
-import com.neillon.authentication.databinding.FragmentLoginEmailBinding
+import com.neillon.authentication.databinding.FragmentRegisterEmailBinding
 import kotlinx.coroutines.launch
 
-class LoginEmailFragment : Fragment() {
+class RegisterEmailFragment : Fragment() {
 
-    private lateinit var binding: FragmentLoginEmailBinding
     private lateinit var navController: NavController
-    private val viewModel: LoginEmailViewModel by activityViewModels<LoginEmailViewModel>()
+    private lateinit var binding: FragmentRegisterEmailBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private val viewModel by activityViewModels<RegisterEmailViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentLoginEmailBinding.inflate(layoutInflater)
+        binding = FragmentRegisterEmailBinding.inflate(layoutInflater)
         return binding.root
     }
 
@@ -41,12 +37,8 @@ class LoginEmailFragment : Fragment() {
         setupView()
     }
 
-    private fun setupNavigation() {
-        navController = findNavController()
-    }
-
     private fun setupView() {
-        binding.editTextEmail.addTextChangedListener(object : TextWatcher {
+        binding.editTextRegisterEmail.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
@@ -56,31 +48,33 @@ class LoginEmailFragment : Fragment() {
                 viewModel.updateEmail(email)
 
                 lifecycleScope.launch {
-                    if (viewModel.validEmail()) {
-                        binding.editTextEmail.error = null
-                        binding.nextButtonEmail.enable()
+                    if (viewModel.validEmail(email)) {
+                        if (!binding.editTextRegisterEmail.error.isNullOrBlank())
+                            binding.editTextRegisterEmail.error = null
+                        binding.nextButtonRegisterEmail.enable()
                     } else {
-                        binding.editTextEmail.error = getString(R.string.invalid_email)
-                        binding.nextButtonEmail.disable()
+                        if (binding.editTextRegisterEmail.error.isNullOrBlank())
+                            binding.editTextRegisterEmail.error = getString(R.string.invalid_email)
+                        binding.nextButtonRegisterEmail.disable()
                     }
                 }
 
             }
         })
 
-        binding.nextButtonEmail.disable()
-        binding.nextButtonEmail.setOnClickListener { navigateToLoginWithPassword() }
+        binding.nextButtonRegisterEmail.disable()
+        binding.nextButtonRegisterEmail.setOnClickListener { navigateToRegisterName() }
     }
 
-    private fun navigateToLoginWithPassword() {
+    private fun navigateToRegisterName() {
         val action =
-            LoginEmailFragmentDirections.actionLoginWithEmailFragmentToLoginPasswordFragment(
+            RegisterEmailFragmentDirections.actionRegisterFragmentToRegisterNameFragment(
                 viewModel.email.value.toString()
             )
         navController.navigate(action)
     }
 
-    companion object {
-        const val TAG = "LoginWithEmailFragment"
+    private fun setupNavigation() {
+        navController = findNavController()
     }
 }

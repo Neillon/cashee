@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.AuthCredential
 import com.neillon.cashee.authentication.domain.User
-import com.neillon.cashee.authentication.usecase.LoginWithGoogleUseCase
+import com.neillon.cashee.authentication.usecase.login.LoginWithGoogleUseCase
 import com.neillon.cashee.authentication.usecase.UseCase
 import com.neillon.cashee.utils.SingleLiveEvent
 import kotlinx.coroutines.launch

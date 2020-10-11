@@ -6,6 +6,7 @@
     <string name="or">ou</string>
     <string name="dont_have_an_account">Não tem uma conta?</string>
     <string name="email">E-mail</string>
+    <string name="continue_to_next_step">Continuar</string>
     <string name="password">Senha</string>
     <string name="forgot_password">Esqueceu a senha?</string>
     <string name="sign_in">Entrar</string>
@@ -19,4 +20,7 @@
     <string name="what_is_your_email">Qual o seu email?</string>
     <string name="invalid_email">E-mail inválido</string>
     <string name="inform_your_password">Informe sua senha</string>
+    <string name="how_can_i_call_you">Como posso te chamar?</string>
+    <string name="name">Nome</string>
+    <string name="password_description">Escolha uma senha com pelo menos 6 caracteres, variando entre números e letras</string>
 </resources>

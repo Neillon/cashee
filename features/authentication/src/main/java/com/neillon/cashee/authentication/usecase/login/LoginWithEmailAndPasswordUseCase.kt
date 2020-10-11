@@ -1,8 +1,8 @@
-package com.neillon.cashee.authentication.usecase
+package com.neillon.cashee.authentication.usecase.login
 
 import com.neillon.cashee.authentication.domain.User
 import com.neillon.cashee.authentication.repository.AuthRepository
-import com.neillon.cashee.authentication.util.FirebaseConfiguration
+import com.neillon.cashee.authentication.usecase.UseCase
 
 class LoginWithEmailAndPasswordUseCase(
     private val repository: AuthRepository

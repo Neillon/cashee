@@ -1,4 +1,4 @@
-package com.neillon.cashee.authentication.ui.login.with_email
+package com.neillon.cashee.authentication.ui.login.with_email.password
 
 import android.os.Bundle
 import android.text.Editable
@@ -59,16 +59,19 @@ class LoginPasswordFragment : Fragment() {
             try {
                 val password = binding.editTextPassword.text.toString()
                 val user = viewModel.loginWithEmail(email, password)
-                if (user != null) {
-                    val action =
-                        LoginPasswordFragmentDirections.actionLoginPasswordFragmentToMainActivity()
-                    navController.navigate(action)
-                    activity?.finish()
-                }
+                navigateToMain()
+
             } catch (e: Exception) {
                 binding.root makeSimpleSnackBarWithMessage "Não foi possível realizar o login"
             }
         }
+    }
+
+    private fun navigateToMain() {
+        val action =
+            LoginPasswordFragmentDirections.actionLoginPasswordFragmentToMainActivity()
+        navController.navigate(action)
+        activity?.finish()
     }
 
     private fun setupNavigation() {

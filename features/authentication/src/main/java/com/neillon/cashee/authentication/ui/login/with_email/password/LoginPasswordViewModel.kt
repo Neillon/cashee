@@ -1,8 +1,8 @@
-package com.neillon.cashee.authentication.ui.login.with_email
+package com.neillon.cashee.authentication.ui.login.with_email.password
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.neillon.cashee.authentication.usecase.LoginWithEmailAndPasswordUseCase
+import com.neillon.cashee.authentication.usecase.login.LoginWithEmailAndPasswordUseCase
 import kotlinx.coroutines.launch
 
 class LoginPasswordViewModel(

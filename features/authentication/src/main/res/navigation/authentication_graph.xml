@@ -21,12 +21,12 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.neillon.cashee.authentication.ui.register.RegisterFragment"
+        android:name="com.neillon.cashee.authentication.ui.register.email.RegisterEmailFragment"
         android:label="Register"
-        tools:layout="@layout/fragment_register">
+        tools:layout="@layout/fragment_register_email">
         <action
-            android:id="@+id/action_registerFragment_to_mainActivity"
-            app:destination="@id/mainActivity" />
+            android:id="@+id/action_registerFragment_to_registerNameFragment"
+            app:destination="@id/registerNameFragment" />
     </fragment>
     <activity
         android:id="@+id/mainActivity"
@@ -34,14 +34,14 @@
         android:label="MainActivity" />
     <fragment
         android:id="@+id/loginWithEmailFragment"
-        android:name="com.neillon.cashee.authentication.ui.login.with_email.LoginEmailFragment">
+        android:name="com.neillon.cashee.authentication.ui.login.with_email.email.LoginEmailFragment">
         <action
             android:id="@+id/action_loginWithEmailFragment_to_loginPasswordFragment"
             app:destination="@id/loginPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginPasswordFragment"
-        android:name="com.neillon.cashee.authentication.ui.login.with_email.LoginPasswordFragment"
+        android:name="com.neillon.cashee.authentication.ui.login.with_email.password.LoginPasswordFragment"
         android:label="fragment_login_password"
         tools:layout="@layout/fragment_login_password">
         <argument
@@ -49,6 +49,33 @@
             app:argType="string" />
         <action
             android:id="@+id/action_loginPasswordFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerNameFragment"
+        android:name="com.neillon.cashee.authentication.ui.register.name.RegisterNameFragment"
+        android:label="fragment_register_name"
+        tools:layout="@layout/fragment_register_name">
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_registerNameFragment_to_registerPasswordFragment"
+            app:destination="@id/registerPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerPasswordFragment"
+        android:name="com.neillon.cashee.authentication.ui.register.password.RegisterPasswordFragment"
+        android:label="fragment_register_password"
+        tools:layout="@layout/fragment_register_password">
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_registerPasswordFragment_to_mainActivity"
             app:destination="@id/mainActivity" />
     </fragment>
 
