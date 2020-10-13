@@ -6,7 +6,9 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -38,9 +40,19 @@ class RegisterPasswordFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        
+
         setupNavigation()
         setupView()
+        observeData()
+    }
+
+    private fun observeData() {
+        viewModel.error.observe(viewLifecycleOwner, Observer {
+            val hasError = !it.isNullOrBlank()
+            if (hasError) {
+                Toast.makeText(context, it!!, Toast.LENGTH_LONG).show()
+            }
+        })
     }
 
     private fun setupView() {
@@ -71,7 +83,8 @@ class RegisterPasswordFragment : Fragment() {
     }
 
     private fun navigateToMain() {
-        val action = RegisterPasswordFragmentDirections.actionRegisterPasswordFragmentToMainActivity()
+        val action =
+            RegisterPasswordFragmentDirections.actionRegisterPasswordFragmentToMainActivity()
         navController.navigate(action)
         activity?.finish()
     }

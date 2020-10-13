@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
@@ -58,6 +59,16 @@ class LoginFragment : Fragment() {
 
         setupViews()
         observeViewModel()
+        observeData()
+    }
+
+    private fun observeData() {
+        authenticationViewModel.error.observe(viewLifecycleOwner, Observer {
+            val hasError = !it.isNullOrBlank()
+
+            if (hasError)
+                Toast.makeText(context, it, Toast.LENGTH_LONG).show()
+        })
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

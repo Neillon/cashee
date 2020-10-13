@@ -5,11 +5,12 @@ import com.neillon.cashee.authentication.repository.AuthenticationRepository
 import com.neillon.cashee.authentication.ui.login.initial.LoginViewModel
 import com.neillon.cashee.authentication.ui.login.with_email.password.LoginPasswordViewModel
 import com.neillon.cashee.authentication.ui.register.password.RegisterPasswordViewModel
+import com.neillon.cashee.authentication.usecase.UseCase
 import com.neillon.cashee.authentication.usecase.login.LoginWithEmailAndPasswordUseCase
 import com.neillon.cashee.authentication.usecase.login.LoginWithGoogleUseCase
-import com.neillon.cashee.authentication.usecase.UseCase
 import com.neillon.cashee.authentication.usecase.register.RegisterUseCase
 import com.neillon.cashee.authentication.util.FirebaseConfiguration
+import com.neillon.cashee.common.network.NetworkManager
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.bind
 import org.koin.dsl.module
@@ -20,8 +21,13 @@ object AuthenticationModule {
         single { FirebaseConfiguration(firebaseContext = get()) }
         single { FirebaseConfiguration(firebaseContext = get()).Authentication().firebaseAuth }
 
+        // Common
+        single { NetworkManager(context = get()) }
+
         // Repository
-        factory { AuthenticationRepository(firebaseAuth = get()) } bind AuthRepository::class
+        factory {
+            AuthenticationRepository(firebaseAuth = get(), networkManager = get())
+        } bind AuthRepository::class
 
         // Use Case
         factory { LoginWithGoogleUseCase(repository = get()) } bind UseCase::class

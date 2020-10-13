@@ -23,4 +23,5 @@
     <string name="how_can_i_call_you">Como posso te chamar?</string>
     <string name="name">Nome</string>
     <string name="password_description">Escolha uma senha com pelo menos 6 caracteres, variando entre números e letras</string>
+    <string name="no_internet_connection">Você não possui internet. Por favor, verifique sua conexão</string>
 </resources>

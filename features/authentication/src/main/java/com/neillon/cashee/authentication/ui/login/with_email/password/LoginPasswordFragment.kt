@@ -6,12 +6,13 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.neillon.authentication.databinding.FragmentLoginPasswordBinding
-import com.neillon.cashee.authentication.util.makeSimpleSnackBarWithMessage
 import org.koin.android.viewmodel.ext.android.viewModel
 
 private const val ARG_EMAIL = "email"
@@ -38,6 +39,21 @@ class LoginPasswordFragment : Fragment() {
 
         setupNavigation()
         setupView()
+        observeData()
+    }
+
+    private fun observeData() {
+        viewModel.error.observe(viewLifecycleOwner, Observer {
+            val hasError = !it.isNullOrBlank()
+
+            if (hasError)
+                Toast.makeText(context, it, Toast.LENGTH_LONG).show()
+        })
+
+        viewModel.handleLoginSuccess.observe(viewLifecycleOwner, Observer {
+            if (it)
+                navigateToMain()
+        })
     }
 
     private fun setupView() {
@@ -56,14 +72,8 @@ class LoginPasswordFragment : Fragment() {
         })
         binding.nextButtonPassword.disable()
         binding.nextButtonPassword.setOnClickListener {
-            try {
-                val password = binding.editTextPassword.text.toString()
-                val user = viewModel.loginWithEmail(email, password)
-                navigateToMain()
-
-            } catch (e: Exception) {
-                binding.root makeSimpleSnackBarWithMessage "Não foi possível realizar o login"
-            }
+            val password = binding.editTextPassword.text.toString()
+            val user = viewModel.loginWithEmail(email, password)
         }
     }
 
