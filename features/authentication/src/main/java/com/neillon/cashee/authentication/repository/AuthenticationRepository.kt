@@ -19,24 +19,15 @@ class AuthenticationRepository(
     override suspend fun loginWithGoogle(credential: AuthCredential): User =
         networkManager.fetchFromInternet<User> {
             suspendCoroutine { continuation ->
-                val loginTask = firebaseAuth.signInWithCredential(credential)
-
-                loginTask
-                    .addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            val firebaseUser = firebaseAuth.currentUser!!
-                            val user = User(firebaseUser.email!!, "")
-
-                            continuation.resume(user)
-                        } else {
-                            Log.w(
-                                TAG,
-                                "firebaseAuthWithGoogle: $ERROR_LOGGING_IN -> ${task.exception}"
-                            )
-                            continuation.resumeWithException(task.exception!!)
-                        }
+                firebaseAuth.signInWithCredential(credential)
+                    .addOnSuccessListener {
+                        val user = User(it.user.email!!, it.user.displayName)
+                        continuation.resume(user)
                     }
-                    .addOnFailureListener { e -> continuation.resumeWithException(e) }
+                    .addOnFailureListener { e ->
+                        Log.w(TAG, "loginWithGoogle -> ${e.localizedMessage}")
+                        continuation.resumeWithException(e)
+                    }
             }
         }
 
@@ -45,21 +36,14 @@ class AuthenticationRepository(
         networkManager.fetchFromInternet<User> {
             suspendCoroutine { continuation ->
                 firebaseAuth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            val firebaseUser = firebaseAuth.currentUser!!
-                            val user = User(firebaseUser.email!!, "")
-
-                            continuation.resume(user)
-                        } else {
-                            Log.w(
-                                TAG,
-                                "firebaseAuthWithGoogle: $ERROR_LOGGING_IN -> ${task.exception}"
-                            )
-                            continuation.resumeWithException(task.exception!!)
-                        }
+                    .addOnSuccessListener {
+                        val user = User(it.user.email!!, it.user.displayName)
+                        continuation.resume(user)
                     }
-                    .addOnFailureListener { e -> continuation.resumeWithException(e) }
+                    .addOnFailureListener { e ->
+                        Log.w(TAG, "loginWithEmailAndPassword -> ${e.localizedMessage}")
+                        continuation.resumeWithException(e)
+                    }
             }
         }
 
@@ -69,26 +53,18 @@ class AuthenticationRepository(
         networkManager.fetchFromInternet<User> {
             suspendCoroutine { continuation ->
                 firebaseAuth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            val firebaseUser = firebaseAuth.currentUser!!
-                            val user = User(firebaseUser.email!!, "")
-
-                            continuation.resume(user)
-                        } else {
-                            Log.w(
-                                TAG,
-                                "firebaseAuthWithGoogle: $ERROR_LOGGING_IN -> ${task.exception}"
-                            )
-                            continuation.resumeWithException(task.exception!!)
-                        }
+                    .addOnSuccessListener {
+                        val user = User(it.user.email!!, it.user.displayName)
+                        continuation.resume(user)
                     }
-                    .addOnFailureListener { e -> continuation.resumeWithException(e) }
+                    .addOnFailureListener { e ->
+                        Log.w(TAG, "register -> ${e.localizedMessage}")
+                        continuation.resumeWithException(e)
+                    }
             }
         }
 
     companion object {
         private const val TAG = "AuthenticationRepository"
-        private const val ERROR_LOGGING_IN = "Error logging in on Firebase"
     }
 }

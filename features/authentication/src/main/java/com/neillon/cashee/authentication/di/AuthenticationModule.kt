@@ -5,6 +5,7 @@ import com.neillon.cashee.authentication.repository.AuthenticationRepository
 import com.neillon.cashee.authentication.ui.login.initial.LoginViewModel
 import com.neillon.cashee.authentication.ui.login.with_email.password.LoginPasswordViewModel
 import com.neillon.cashee.authentication.ui.register.password.RegisterPasswordViewModel
+import com.neillon.cashee.authentication.usecase.ExceptionManager
 import com.neillon.cashee.authentication.usecase.UseCase
 import com.neillon.cashee.authentication.usecase.login.LoginWithEmailAndPasswordUseCase
 import com.neillon.cashee.authentication.usecase.login.LoginWithGoogleUseCase
