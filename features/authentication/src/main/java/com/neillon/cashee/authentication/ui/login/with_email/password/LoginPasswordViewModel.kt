@@ -14,16 +14,22 @@ class LoginPasswordViewModel(
 
     private val _error = MutableLiveData<String?>(null)
     val error: LiveData<String?> = _error
+    private val _loadingLogin = MutableLiveData(false)
+    val loadingLogin: LiveData<Boolean> = _loadingLogin
+
     val handleLoginSuccess = SingleLiveEvent<Boolean>()
 
     fun loginWithEmail(email: String, password: String) = viewModelScope.launch {
+        _loadingLogin.value = true
         try {
             val params = LoginWithEmailAndPasswordUseCase.Params(email, password)
-            loginWithEmailAndPasswordUseCase.execute(params)
-            _error.value = null
+            val user = loginWithEmailAndPasswordUseCase.execute(params)
+
             handleLoginSuccess.value = true
         } catch (e: Exception) {
             _error.value = e.localizedMessage
+        } finally {
+            _loadingLogin.value = false
         }
     }
 }

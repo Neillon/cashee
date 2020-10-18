@@ -54,6 +54,13 @@ class LoginPasswordFragment : Fragment() {
             if (it)
                 navigateToMain()
         })
+
+        viewModel.loadingLogin.observe(viewLifecycleOwner, Observer {
+            if (it)
+                binding.nextButtonPassword.startLoading()
+            else
+                binding.nextButtonPassword.stopLoading()
+        })
     }
 
     private fun setupView() {

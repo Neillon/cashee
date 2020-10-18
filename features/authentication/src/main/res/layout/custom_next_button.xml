@@ -2,22 +2,22 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nextButtonContainer"
     android:layout_width="match_parent"
     android:layout_height="70dp"
-    android:id="@+id/nextButtonContainer"
     android:padding="20dp"
     tools:background="@drawable/background_next_button">
 
     <TextView
         android:id="@+id/buttonTitleNextButton"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/play"
+        android:letterSpacing=".05"
         android:textColor="?attr/colorOnPrimary"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:fontFamily="@font/play"
-        android:letterSpacing=".05"
-        style="@style/TextAppearance.MaterialComponents.Headline6"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewNextButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewNextButton"
@@ -32,4 +32,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="?attr/colorOnPrimary" />
+
+    <ProgressBar
+        android:id="@+id/progressBarNextButton"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:indeterminate="true"
+        android:indeterminateTint="?attr/colorOnPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewNextButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
