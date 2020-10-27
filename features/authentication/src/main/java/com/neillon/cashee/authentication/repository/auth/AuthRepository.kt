@@ -1,7 +1,8 @@
-package com.neillon.cashee.authentication.repository
+package com.neillon.cashee.authentication.repository.auth
 
 import com.google.firebase.auth.AuthCredential
 import com.neillon.cashee.authentication.domain.User
+import com.neillon.cashee.authentication.repository.Repository
 
 interface AuthRepository : Repository<User> {
     suspend fun loginWithGoogle(credential: AuthCredential): User

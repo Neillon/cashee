@@ -102,24 +102,9 @@ class LoginFragment : Fragment() {
     }
 
     private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
-        try {
-            if (completedTask.isSuccessful) {
-                val googleAccount = completedTask.getResult(ApiException::class.java)
-                val credential = GoogleAuthProvider.getCredential(googleAccount!!.idToken!!, null)
-                authenticationViewModel.loginWithGoogle(credential)
-            } else {
-                binding.root makeSimpleSnackBarWithMessage "Não foi possível realizar o login"
-                Log.e(TAG, "handleSignInResult: ${completedTask.exception}")
-            }
-
-        } catch (e: ApiException) {
-            Log.w(AuthenticationActivity.TAG, "handleSignInResult: failed code -> " + e.statusCode)
-        }
+        authenticationViewModel.loginWithGoogle(completedTask)
     }
 
-    /**
-     * Navigate to register fragment
-     */
     private fun navigateToRegister() {
         val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
         navController.navigate(action)

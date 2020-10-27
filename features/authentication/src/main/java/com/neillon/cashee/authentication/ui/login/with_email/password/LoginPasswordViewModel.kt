@@ -4,12 +4,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.neillon.cashee.authentication.domain.User
+import com.neillon.cashee.authentication.usecase.UseCase
 import com.neillon.cashee.authentication.usecase.login.LoginWithEmailAndPasswordUseCase
 import com.neillon.cashee.utils.SingleLiveEvent
 import kotlinx.coroutines.launch
 
 class LoginPasswordViewModel(
-    private val loginWithEmailAndPasswordUseCase: LoginWithEmailAndPasswordUseCase
+    private val loginWithEmailAndPasswordUseCase: UseCase<LoginWithEmailAndPasswordUseCase.Params, User>
 ) : ViewModel() {
 
     private val _error = MutableLiveData<String?>(null)

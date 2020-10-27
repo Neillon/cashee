@@ -74,6 +74,8 @@ dependencies {
     // Google Firebase auth & Play Services auth
     implementation "com.google.firebase:firebase-auth:$firebase_auth_version"
     implementation "com.google.android.gms:play-services-auth:$play_services_auth_version"
+    implementation platform('com.google.firebase:firebase-bom:25.12.0')
+    implementation 'com.google.firebase:firebase-firestore-ktx'
 
     // Koin
     implementation "org.koin:koin-android:$koin_version"

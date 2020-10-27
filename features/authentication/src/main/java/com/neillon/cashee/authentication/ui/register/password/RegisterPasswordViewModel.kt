@@ -4,11 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.neillon.cashee.authentication.domain.User
+import com.neillon.cashee.authentication.usecase.UseCase
 import com.neillon.cashee.authentication.usecase.register.RegisterUseCase
 import kotlinx.coroutines.launch
 
 class RegisterPasswordViewModel(
-    private val registerUseCase: RegisterUseCase
+    private val registerUseCase: UseCase<RegisterUseCase.Params, User>
 ) : ViewModel() {
 
     private val _error = MutableLiveData<String?>()

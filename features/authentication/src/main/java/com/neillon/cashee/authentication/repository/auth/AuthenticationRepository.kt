@@ -1,4 +1,4 @@
-package com.neillon.cashee.authentication.repository
+package com.neillon.cashee.authentication.repository.auth
 
 import android.annotation.SuppressLint
 import android.util.Log
@@ -21,7 +21,7 @@ class AuthenticationRepository(
             suspendCoroutine { continuation ->
                 firebaseAuth.signInWithCredential(credential)
                     .addOnSuccessListener {
-                        val user = User(it.user.email!!, it.user.displayName)
+                        val user = User(it.user?.email!!, it.user?.displayName)
                         continuation.resume(user)
                     }
                     .addOnFailureListener { e ->
@@ -37,7 +37,7 @@ class AuthenticationRepository(
             suspendCoroutine { continuation ->
                 firebaseAuth.signInWithEmailAndPassword(email, password)
                     .addOnSuccessListener {
-                        val user = User(it.user.email!!, it.user.displayName)
+                        val user = User(it.user?.email!!, it.user?.displayName)
                         continuation.resume(user)
                     }
                     .addOnFailureListener { e ->
@@ -54,7 +54,7 @@ class AuthenticationRepository(
             suspendCoroutine { continuation ->
                 firebaseAuth.createUserWithEmailAndPassword(email, password)
                     .addOnSuccessListener {
-                        val user = User(it.user.email!!, it.user.displayName)
+                        val user = User(it.user?.email!!, it.user?.displayName)
                         continuation.resume(user)
                     }
                     .addOnFailureListener { e ->
