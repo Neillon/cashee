@@ -2,7 +2,7 @@ package com.neillon.cashee.authentication.repository.user
 
 import com.google.firebase.firestore.FirebaseFirestore
 import com.neillon.cashee.authentication.domain.User
-import com.neillon.cashee.authentication.util.FirebaseConfiguration
+import com.neillon.network.firebase.FirebaseConfiguration
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine

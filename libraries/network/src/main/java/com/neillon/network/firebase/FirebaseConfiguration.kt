@@ -1,4 +1,4 @@
-package com.neillon.cashee.authentication.util
+package com.neillon.network.firebase
 
 import android.content.Context
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -8,6 +8,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.neillon.cashee.common.constants.FirebaseConstants
 
 class FirebaseConfiguration(var firebaseContext: Context) {
 
@@ -19,12 +20,12 @@ class FirebaseConfiguration(var firebaseContext: Context) {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail()
             .requestProfile()
-            .requestIdToken(Constants.FirebaseAuthentication.REQUEST_ID_TOKEN)
+            .requestIdToken(FirebaseConstants.FirebaseAuthentication.REQUEST_ID_TOKEN)
             .build()
         googleSignInClient = GoogleSignIn.getClient(firebaseContext, gso)
     }
 
     object Collections {
-        val users = "users"
+        const val users = "users"
     }
 }

@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "618600222236",
+    "firebase_url": "https://cashee-61d27.firebaseio.com",
+    "project_id": "cashee-61d27",
+    "storage_bucket": "cashee-61d27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618600222236:android:2531ab7b873f1801b5d9d9",
+        "android_client_info": {
+          "package_name": "com.neillon.cashee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "618600222236-d15di0v1fndslcmh00658dv82vrun9fa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.neillon.cashee",
+            "certificate_hash": "885c8673af2132cce5384f130a66645921b7ce35"
+          }
+        },
+        {
+          "client_id": "618600222236-u0qkd9kl9nlpocfnrij88le8nke95qk8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8FPZzNXjhTZ-QYIqVnKcI3s9bVzutpf8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "618600222236-u0qkd9kl9nlpocfnrij88le8nke95qk8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618600222236:android:c691163180b089e0b5d9d9",
+        "android_client_info": {
+          "package_name": "com.neillon.cashee.development"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "618600222236-u0qkd9kl9nlpocfnrij88le8nke95qk8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8FPZzNXjhTZ-QYIqVnKcI3s9bVzutpf8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "618600222236-u0qkd9kl9nlpocfnrij88le8nke95qk8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618600222236:android:f2d61db5505fb7ebb5d9d9",
+        "android_client_info": {
+          "package_name": "com.neillon.cashee.production"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "618600222236-u0qkd9kl9nlpocfnrij88le8nke95qk8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8FPZzNXjhTZ-QYIqVnKcI3s9bVzutpf8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "618600222236-u0qkd9kl9nlpocfnrij88le8nke95qk8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

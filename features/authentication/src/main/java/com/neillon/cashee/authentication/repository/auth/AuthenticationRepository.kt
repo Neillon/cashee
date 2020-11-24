@@ -5,7 +5,7 @@ import android.util.Log
 import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.FirebaseAuth
 import com.neillon.cashee.authentication.domain.User
-import com.neillon.cashee.common.network.NetworkManager
+import com.neillon.network.NetworkManager
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine

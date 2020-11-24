@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: "androidx.navigation.safeargs.kotlin"
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 
 android {
     compileSdkVersion 30
@@ -18,12 +19,45 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+//    signingConfigs {
+//        release {
+//            storeFile("")
+//            storePassword ""
+//            keyAlias ""
+//            keyPassword ""
+//        }
+//    }
+
     buildTypes {
+        debug {
+            debuggable true
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfig.release
         }
     }
+
+    flavorDimensions "default"
+    productFlavors {
+        development {
+            dimension "default"
+            versionNameSuffix "-development"
+        }
+
+        production {
+            dimension "default"
+            versionNameSuffix "-production"
+        }
+    }
+
+//    sourceSets {
+//        main {
+//            java.srcDirs = ['development/res', 'production/res']
+//        }
+//    }
 
     viewBinding {
         enabled true
@@ -74,8 +108,10 @@ dependencies {
     // Google Firebase auth & Play Services auth
     implementation "com.google.firebase:firebase-auth:$firebase_auth_version"
     implementation "com.google.android.gms:play-services-auth:$play_services_auth_version"
-    implementation platform('com.google.firebase:firebase-bom:25.12.0')
+    implementation platform('com.google.firebase:firebase-bom:26.0.0')
     implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
     // Koin
     implementation "org.koin:koin-android:$koin_version"

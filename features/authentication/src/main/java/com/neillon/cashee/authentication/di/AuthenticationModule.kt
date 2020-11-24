@@ -13,10 +13,8 @@ import com.neillon.cashee.authentication.usecase.login.LoginWithEmailAndPassword
 import com.neillon.cashee.authentication.usecase.login.LoginWithGoogleUseCase
 import com.neillon.cashee.authentication.usecase.register.RegisterUseCase
 import com.neillon.cashee.authentication.usecase.user.GetUserByEmailUseCase
-import com.neillon.cashee.authentication.util.FirebaseConfiguration
-import com.neillon.cashee.common.network.NetworkManager
+import com.neillon.network.firebase.FirebaseConfiguration
 import org.koin.android.viewmodel.dsl.viewModel
-import org.koin.core.qualifier.Qualifier
 import org.koin.core.qualifier.StringQualifier
 import org.koin.core.qualifier.named
 import org.koin.dsl.bind
@@ -27,24 +25,53 @@ object AuthenticationModule {
         // Firebase
         single { FirebaseConfiguration(firebaseContext = get()) }
         single { FirebaseConfiguration(firebaseContext = get()).firebaseAuth }
-        single { FirebaseConfiguration(firebaseContext = get()).firestore}
-
-        // Common
-        single { NetworkManager(context = get()) }
+        single { FirebaseConfiguration(firebaseContext = get()).firestore }
 
         // Repository
-        factory { AuthenticationRepository(firebaseAuth = get(), networkManager = get()) } bind AuthRepository::class
+        factory {
+            AuthenticationRepository(
+                firebaseAuth = get(),
+                networkManager = get()
+            )
+        } bind AuthRepository::class
         factory { UserRepository(firestore = get()) } bind UserFirebaseRepository::class
 
         // Use Case
-        factory<UseCase<LoginWithGoogleUseCase.Params, User>>(named("loginWithGoogle")) { LoginWithGoogleUseCase(repository = get(), userRepository = get()) }
-        factory<UseCase<LoginWithEmailAndPasswordUseCase.Params, User>>(named("loginWithEmailAndPassword")) { LoginWithEmailAndPasswordUseCase(repository = get(), userRepository = get()) }
-        factory<UseCase<RegisterUseCase.Params, User>>(named("register")) { RegisterUseCase(authenticationRepository = get(), userRepository = get()) }
-        factory<UseCase<GetUserByEmailUseCase.Params, User?>>(named("getUserByEmail")) { GetUserByEmailUseCase(repository = get()) }
+        factory<UseCase<LoginWithGoogleUseCase.Params, User>>(named("loginWithGoogle")) {
+            LoginWithGoogleUseCase(
+                repository = get(),
+                userRepository = get()
+            )
+        }
+        factory<UseCase<LoginWithEmailAndPasswordUseCase.Params, User>>(named("loginWithEmailAndPassword")) {
+            LoginWithEmailAndPasswordUseCase(
+                repository = get(),
+                userRepository = get()
+            )
+        }
+        factory<UseCase<RegisterUseCase.Params, User>>(named("register")) {
+            RegisterUseCase(
+                authenticationRepository = get(),
+                userRepository = get()
+            )
+        }
+        factory<UseCase<GetUserByEmailUseCase.Params, User?>>(named("getUserByEmail")) {
+            GetUserByEmailUseCase(
+                repository = get()
+            )
+        }
 
         // ViewModel
         viewModel { LoginViewModel(authenticationUseCase = get(qualifier = StringQualifier("loginWithGoogle"))) }
-        viewModel { LoginPasswordViewModel(loginWithEmailAndPasswordUseCase = get(qualifier = StringQualifier("loginWithEmailAndPassword"))) }
+        viewModel {
+            LoginPasswordViewModel(
+                loginWithEmailAndPasswordUseCase = get(
+                    qualifier = StringQualifier(
+                        "loginWithEmailAndPassword"
+                    )
+                )
+            )
+        }
         viewModel { RegisterPasswordViewModel(registerUseCase = get(qualifier = StringQualifier("register"))) }
     }
 }

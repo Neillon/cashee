@@ -8,12 +8,10 @@ import androidx.lifecycle.viewModelScope
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.GoogleAuthProvider
 import com.neillon.cashee.authentication.domain.User
 import com.neillon.cashee.authentication.usecase.login.LoginWithGoogleUseCase
 import com.neillon.cashee.authentication.usecase.UseCase
-import com.neillon.cashee.authentication.util.makeSimpleSnackBarWithMessage
 import com.neillon.cashee.ui.AuthenticationActivity
 import com.neillon.cashee.utils.SingleLiveEvent
 import kotlinx.coroutines.launch

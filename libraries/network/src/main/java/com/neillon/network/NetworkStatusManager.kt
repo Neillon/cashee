@@ -1,26 +1,15 @@
-package com.neillon.cashee.common.network
+package com.neillon.network
 
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
-import com.neillon.cashee.common.R
-import com.neillon.cashee.common.exceptions.NoInternetConnectionException
 
-class NetworkManager(
+class NetworkStatusManager(
     private val context: Context
-) {
+): INetworkStatusManager {
 
-    suspend fun <T> fetchFromInternet(block: suspend () -> T): T {
-        val noInternet = !hasInternet()
-
-        if (noInternet)
-            throw NoInternetConnectionException(context.getString(R.string.no_internet_connection))
-
-        return block()
-    }
-
-    private fun hasInternet(): Boolean {
+    override fun hasInternet(): Boolean {
         val hasInternet = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             val connectivityManager = context.getSystemService(ConnectivityManager::class.java)
 

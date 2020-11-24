@@ -13,7 +13,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.neillon.authentication.databinding.FragmentRegisterPasswordBinding
-import com.neillon.cashee.authentication.util.makeSimpleSnackBarWithMessage
+import com.neillon.cashee.common.utils.makeSimpleSnackBarWithMessage
 import org.koin.android.viewmodel.ext.android.viewModel
 
 private const val ARG_EMAIL = "email"

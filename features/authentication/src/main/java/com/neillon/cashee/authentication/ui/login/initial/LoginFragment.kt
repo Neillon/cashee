@@ -2,7 +2,6 @@ package com.neillon.cashee.authentication.ui.login.initial
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,15 +12,12 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.GoogleAuthProvider
 import com.neillon.authentication.databinding.FragmentLoginBinding
 import com.neillon.cashee.authentication.di.AuthenticationModule
-import com.neillon.cashee.authentication.util.FirebaseConfiguration
-import com.neillon.cashee.authentication.util.makeSimpleSnackBarWithMessage
-import com.neillon.cashee.ui.AuthenticationActivity
+import com.neillon.network.firebase.FirebaseConfiguration
 import com.neillon.cashee.utils.Constants
+import com.neillon.network.di.NetworkModule
 import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
@@ -34,14 +30,17 @@ class LoginFragment : Fragment() {
     private lateinit var navController: NavController
 
     private val authenticationViewModel by viewModel<LoginViewModel>()
-    private val firebaseConfiguration: FirebaseConfiguration by inject()
+    private val firebaseConfiguration: com.neillon.network.firebase.FirebaseConfiguration by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        injectDependencies()
+    }
 
+    private fun injectDependencies() {
         koinApplication {
-            unloadKoinModules(AuthenticationModule.dependencies)
-            loadKoinModules(AuthenticationModule.dependencies)
+            unloadKoinModules(listOf(AuthenticationModule.dependencies, NetworkModule.dependencies))
+            loadKoinModules(listOf(AuthenticationModule.dependencies, NetworkModule.dependencies))
         }
     }
 

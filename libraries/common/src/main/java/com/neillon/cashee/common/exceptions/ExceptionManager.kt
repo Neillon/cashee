@@ -1,9 +1,7 @@
-package com.neillon.cashee.authentication.usecase
+package com.neillon.cashee.common.exceptions
 
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
-import com.neillon.cashee.common.exceptions.InvalidCredentialsException
-import com.neillon.cashee.common.exceptions.NotRegisteredException
 import java.lang.Exception
 
 object ExceptionManager {
